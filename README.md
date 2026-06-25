@@ -34,7 +34,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Status:** 🟢 Aprovado
 
 <br>
-<br>
 ---
 <br>
 
@@ -49,7 +48,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O sistema permitiu a inserção de caracteres numéricos, especiais e espaço no início do campo, sem apresentar validações.  
 **Status:** 🔴 Reprovado
 
-<br>
 <br>
 ---
 <br>
@@ -68,7 +66,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Status:** 🟢 Aprovado
 
 <br>
-<br>
 ---
 <br>
 
@@ -83,7 +80,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** A máscara falhou em restringir a entrada, permitindo a digitação livre de caracteres alfabéticos e símbolos especiais.  
 **Status:** 🔴 Reprovado
 
-<br>
 <br>
 ---
 <br>
@@ -102,7 +98,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Status:** 🟢 Aprovado
 
 <br>
-<br>
 ---
 <br>
 
@@ -119,7 +114,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Status:** 🟢 Aprovado
 
 <br>
-<br>
 ---
 <br>
 
@@ -135,7 +129,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O filtro funcionou corretamente, exibindo exclusivamente os profissionais associados ao serviço escolhido.  
 **Status:** 🟢 Aprovado
 
-<br>
 <br>
 ---
 <br>
@@ -154,7 +147,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Status:** 🔴 Reprovado
 
 <br>
-<br>
 ---
 <br>
 
@@ -171,7 +163,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Status:** 🟢 Aprovado
 
 <br>
-<br>
 ---
 <br>
 
@@ -186,7 +177,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** A mensagem de aviso foi renderizada na interface imediatamente após a seleção da data inválida.  
 **Status:** 🟢 Aprovado
 
-<br>
 <br>
 ---
 <br>
@@ -203,7 +193,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O agendamento foi retido pelo sistema e o alerta no topo da tela foi exibido com a mensagem correta.  
 **Status:** 🟢 Aprovado
 
-<br>
 <br>
 ---
 <br>
@@ -224,7 +213,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Status:** 🟢 Aprovado
 
 <br>
-<br>
 ---
 <br>
 
@@ -239,7 +227,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** A listagem exibiu estritamente o escopo de horários delimitados na regra de negócio.  
 **Status:** 🟢 Aprovado
 
-<br>
 <br>
 ---
 <br>
@@ -260,7 +247,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Status:** 🟢 Aprovado
 
 <br>
-<br>
 ---
 <br>
 
@@ -277,7 +263,6 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O horário em conflito foi exibido de forma indisponível, impedindo o clique do usuário.  
 **Status:** 🟢 Aprovado
 
-<br>
 <br>
 ---
 <br>
