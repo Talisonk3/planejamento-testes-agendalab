@@ -1,6 +1,6 @@
 # 📋 Relatório de Validação e Testes Manuais - AgendaLab
 
-**Analista de Qualidade:** Talison Vieira Brito  
+# **Analista de Qualidade:** Talison Vieira Brito  
 **Ambiente:** [AgendaLab QA](https://agendalabqa.vercel.app/)  
 **Data da Execução:** 24/06/2026  
 **Navegador Utilizado:** Google Chrome (Versão 149.0.7827.197 - 64 bits)
