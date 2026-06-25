@@ -122,7 +122,7 @@ O BDD (Behavior-Driven Development) é uma prática de desenvolvimento de softwa
 
 **Evidência:** [ct-09.png](evidencias/ct-09.png)  
 **Resultado esperado:** O sistema deve bloquear a confirmação do agendamento para períodos passados, retornando um alerta restritivo.  
-**Resultado obtido:** O bloqueio foi efetuado com sucesso e o alerta impeditivo de data retroativa foi gerado em tela.  
+**Resultado obtido:** O bloqueio foi efetuado com sucesso e o alerta impeditivo di data retroativa foi gerado em tela.  
 **Status:** 🟢 Aprovado
 
 ---
@@ -165,7 +165,7 @@ O BDD (Behavior-Driven Development) é uma prática de desenvolvimento de softwa
 **Então** o campo "Horário" deve ficar disponível para preenchimento  
 
 **Evidência:** [ct-12.gif](evidencias/ct-12.gif)  
-**Resultado esperado:** O campo "Horário" deve manter o estado desabilitado até que as condições de dependência (Profissional e Data) sejam substituídas.  
+**Resultado esperado:** O campo "Horário" deve manter o estado desabilitado até que as condições de dependência (Profissional e Data) sejam satisfeitas.  
 **Resultado obtido:** O seletor comportou-se de forma reativa, liberando o acesso somente após o preenchimento de ambas as dependências.  
 **Status:** 🟢 Aprovado
 
@@ -207,7 +207,7 @@ O BDD (Behavior-Driven Development) é uma prática de desenvolvimento de softwa
 
 **Dado** que já existe um agendamento confirmado para o "Profissional X" na "Data Y" no "Horário Z"  
 **Quando** realizo um agendamento para o mesmo "Profissional X", na mesma "Data Y"   
-**Então** no seletor de horários não é possível clicar em um horário que já tem um agendamento marcado  
+**Dim** então no seletor de horários não é possível clicar em um horário que já tem um agendamento marcado  
 
 **Evidência:** [ct-01-1.png](evidencias/ct-01-1.png) , [ct-01-2.png](evidencias/ct-01-2.png)  
 **Resultado esperado:** O seletor de horários deve exibir como desabilitado ou indisponível o horário que já possui um agendamento confirmado para o mesmo profissional e data.  
@@ -285,7 +285,7 @@ Ao interagir com o campo "Telefone", o sistema aceita a digitação de caractere
 1. Acesse a aba **Novo Agendamento**.
 2. Clique no campo **Telefone**.
 3. Tente digitar texto alfabético (Ex: `TelefoneTeste`).
-4. Insira caracteres fora da máscara (Ex: `*&*&`).
+4. Insira caracteres fora da máscara (Ex: `*&*工作`).
  
 * **Resultado Esperado:** O campo deve ignorar qualquer entrada que não seja numérica, aplicando a máscara automaticamente.
 * **Resultado Obtido:** O campo aceita letras, espaços e símbolos fora do padrão estipulado.
