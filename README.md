@@ -9,7 +9,7 @@
 Validar o correto funcionamento do fluxo de Novo Agendamento na plataforma AgendaLab, garantindo a conformidade com as regras de negócio estabelecidas e mitigando riscos antes do lançamento em produção.
 
 ### 🧠 O que é BDD?
-O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de software que visa integrar as regras de negócio com a especificação técnica e os testes. Ele utiliza uma linguagem natural, simples e estruturada para描述 como o sistema deve se comportar do ponto de vista do usuário final.
+O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de software que visa integrar as regras de negócio com a especificação técnica e os testes. Ele utiliza uma linguagem natural, simples e estruturada para descrever como o sistema deve se comportar do ponto de vista do usuário final.
 
 ### 🔑 Massa de Teste
 * **Usuário:** `usuario_normal`
@@ -19,9 +19,10 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 
 ## 🧪 Cenários de Teste (CT)
 
-### 👤 Campo: Nome
+## 👤 Campo: Nome
 
-#### **CT-01: Validar campo Nome sendo obrigatório**
+### **CT-01: Validar campo Nome sendo obrigatório**
+
 * **Dado** que o usuário está na tela de agendamento
 * **Quando** ele tenta confirmar o agendamento deixando o campo "Nome" vazio
 * **Então** o sistema deve exibir uma mensagem de erro informando que o campo "Nome" é obrigatório
@@ -29,12 +30,16 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 
 **Evidência:** `ayihl-ktju1.jpg`  
 **Resultado esperado:** O sistema deve impedir o envio do formulário e exibir a mensagem de alerta correspondente à obrigatoriedade do campo.  
-**Resultado obtido:** O formulário foi bloqueado e a mensagem "O campo Nome é obrigatório" foi exibida corretamente.  
+**Resultado obtido:** O formulário foi blocoado e a mensagem "O campo Nome é obrigatório" foi exibida corretamente.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-02: Validar campo Nome aceitando apenas letras e espaço (exceto primeiro caractere)**
+### **CT-02: Validar campo Nome aceitando apenas letras e espaço (exceto primeiro caractere)**
+
 * **Dado** que o usuário está na tela de agendamento
 * **Quando** ele insere no campo "Nome" números, caracteres especiais (#$%) e inicia com espaço
 * **Então** campo não deve aceitar a digitação dos mesmos
@@ -44,23 +49,31 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O sistema permitiu a inserção de caracteres numéricos, especiais e espaço no início do campo, sem apresentar validações.  
 **Status:** 🔴 Reprovado
 
+<br>
+<br>
 ---
+<br>
 
-### 📞 Campo: Telefone
+## 📞 Campo: Telefone
 
-#### **CT-03: Validar campo Telefone sendo obrigatório**
+### **CT-03: Validar campo Telefone sendo obrigatório**
+
 * **Dado** que o usuário está na tela de agendamento
 * **Quando** ele tenta confirmar o agendamento deixando o campo "Telefone" vazio
-* **Então** o sistema deve exibir uma mensagem di erro informando que o campo "Telefone" é obrigatório
+* **Então** o sistema deve exibir uma mensagem de erro informando que o campo "Telefone" é obrigatório
 
 **Evidência:** `aekag-un3mk.jpg`  
 **Resultado esperado:** Exibição de um alerta indicando a obrigatoriedade do preenchimento para avançar com o agendamento.  
 **Resultado obtido:** O preenchimento foi validado como obrigatório através da exibição do alerta em tela.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-04: Validar campo Telefone aceitando apenas números e caracteres da máscara**
+### **CT-04: Validar campo Telefone aceitando apenas números e caracteres da máscara**
+
 * **Dado** que o usuário está digitando no campo "Telefone"
 * **Quando** ele digita letras ou caracteres especiais (fora os caracteres da máscara)
 * **Então** o campo deve ignorar esses caracteres, mantendo apenas os números
@@ -70,11 +83,15 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** A máscara falhou em restringir a entrada, permitindo a digitação livre de caracteres alfabéticos e símbolos especiais.  
 **Status:** 🔴 Reprovado
 
+<br>
+<br>
 ---
+<br>
 
-### 🩺 Campos: Serviço e Profissional
+## 🩺 Campos: Serviço e Profissional
 
-#### **CT-05: Validar campo Serviço sendo obrigatório**
+### **CT-05: Validar campo Serviço sendo obrigatório**
+
 * **Dado** que o usuário está na tela de agendamento
 * **Quando** ele tenta confirmar o agendamento sem selecionar um serviço da lista
 * **Então** o sistema deve exibir uma mensagem de erro informando que a seleção de um serviço é obrigatória
@@ -84,9 +101,13 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O impedimento foi validado e a mensagem de erro foi apresentada conforme esperado.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-06: Validar bloqueio e liberação do campo Profissional**
+### **CT-06: Validar bloqueio e liberação do campo Profissional**
+
 * **Dado** que o usuário acabou de acessar a tela de agendamento
 * **Então** o campo "Profissional" deve estar desabilitado para seleção
 * **Quando** o usuário seleciona uma opção válida no campo "Serviço"
@@ -97,9 +118,13 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O comportamento do elemento seguiu a regra de dependência: permaneceu bloqueado inicialmente e foi liberado após a seleção do serviço.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-07: Validar filtro de Profissionais por Serviço selecionado**
+### **CT-07: Validar filtro de Profissionais por Serviço selecionado**
+
 * **Dado** que o usuário selecionou o serviço "Consulta inicial"
 * **Quando** ele abre a lista de opções do campo "Profissional"
 * **Então** o sistema deve exibir apenas os profissionais vinculados ao serviço selecionado
@@ -110,23 +135,31 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O filtro funcionou corretamente, exibindo exclusivamente os profissionais associados ao serviço escolhido.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-### 📅 Campo: Data
+## 📅 Campo: Data
 
-#### **CT-08: Validar campo Data respeitando a máscara**
+### **CT-08: Validar campo Data respeitando a máscara**
+
 * **Dado** que o usuário está digitando no campo "Data"
 * **Quando** ele insere os números correspondentes ao dia, mês e ano
-* **Diminuir** o campo deve aplicar automaticamente a máscara DD/MM/AAAA
+* **Então** o sistema deve aplicar automaticamente a máscara DD/MM/AAAA
 
 **Evidência:** `aprh2-b5fob.jpg`  
 **Resultado esperado:** A digitação deve respeitar estritamente o limite de caracteres da máscara padrão DD/MM/AAAA.  
 **Resultado obtido:** O campo falhou na limitação de caracteres do bloco correspondente ao ano, permitindo a inserção de até 6 dígitos.  
 **Status:** 🔴 Reprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-09: Validar impedimento de agendamento em data retroativa**
+### **CT-09: Validar impedimento de agendamento em data retroativa**
+
 * **Dado** que a data atual do sistema é hoje
 * **Quando** o usuário tenta selecionar ou digitar uma data anterior ao dia atual
 * **E** seleciona o botão “Confirmar agendamento” com todos os campos obrigatórios preenchidos
@@ -134,12 +167,16 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 
 **Evidência:** `azuvr-r2p2v.jpg`  
 **Resultado esperado:** O sistema deve bloquear a confirmação do agendamento para períodos passados, retornando um alerta restritivo.  
-**Resultado obtido:** O bloqueio foi efetuado com sucesso e o alerta impeditivo de data retroativa foi gerado em tela.  
+**Resultado obtido:** O bloqueio foi efetuado com sucesso e o alerta impeditivo di data retroativa foi gerado em tela.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-10: Validar aviso de impedimento de agendamento aos domingos**
+### **CT-10: Validar aviso de impedimento de agendamento aos domingos**
+
 * **Dado** que eu estou na tela de formulário de agendamento
 * **Quando** eu seleciono uma data que cai em um "Domingo" (ex: "28/06/2026")
 * **Então** o sistema deve exibir a mensagem abaixo do campo “Data” informando que não são permitidos agendamentos aos domingos
@@ -149,9 +186,13 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** A mensagem de aviso foi renderizada na interface imediatamente após a seleção da data inválida.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-11: Validar bloqueio de envio de agendamento aos domingos**
+### **CT-11: Validar bloqueio de envio de agendamento aos domingos**
+
 * **Dado** que eu preenchi todos os campos obrigatórios do formulário
 * **Quando** eu clico no botão "Confirmar Agendamento"
 * **Então** o sistema não deve processar o agendamento
@@ -162,11 +203,15 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O agendamento foi retido pelo sistema e o alerta no topo da tela foi exibido com a mensagem correta.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-### ⏰ Campo: Horário
+## ⏰ Campo: Horário
 
-#### **CT-12: Validar bloqueio e liberação do campo Horário**
+### **CT-12: Validar bloqueio e liberação do campo Horário**
+
 * **Dado** que o usuário está preenchendo o formulário
 * **Quando** os campos "Profissional" e "Data" não estiverem preenchidos
 * **Então** o campo "Horário" deve permanecer desabilitado
@@ -178,9 +223,13 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O seletor comportou-se de forma reativa, liberando o acesso somente após o preenchimento de ambas as dependências.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-13: Validar as opções disponíveis no campo Horário**
+### **CT-13: Validar as opções disponíveis no campo Horário**
+
 * **Dado** que o campo "Horário" foi liberado para preenchimento
 * **Quando** o usuário abre as opções de horários
 * **Então** o sistema deve listar estritamente as opções: 08h, 09h, 10h, 11h, 13h, 14h, 15h, 16h e 17h
@@ -190,11 +239,15 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** A listagem exibiu estritamente o escopo de horários delimitados na regra de negócio.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-### 📝 Campo: Observações
+## 📝 Campo: Observações
 
-#### **CT-14: Validar campo Observações como opcional e limite de caracteres**
+### **CT-14: Validar campo Observações como opcional e limite de caracteres**
+
 * **Dado** que o usuário está no campo "Observações"
 * **Quando** ele deixa o campo totalmente vazio
 * **Então** o sistema deve permitir o avanço, pois o campo não é obrigatório
@@ -206,34 +259,45 @@ O BDD (*Behavior-Driven Development*) é uma prática de desenvolvimento de soft
 **Resultado obtido:** O fluxo de sucesso foi mantido com o campo em branco e o limite estrito de 200 caracteres impediu entradas adicionais.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-### 🛡️ Regras de Negócio e Sucesso
+## 🛡️ Regras de Negócio e Sucesso
 
-#### **CT-15: Validar impedimento de agendamento duplicado (Mesmo Profissional, Data e Horário)**
+### **CT-15: Validar impedimento de agendamento duplicado (Mesmo Profissional, Data e Horário)**
+
 * **Dado** que já existe um agendamento confirmado para o "Profissional X" na "Data Y" no "Horário Z"
 * **Quando** realizo um agendamento para o mesmo "Profissional X", na mesma "Data Y"
 * **Então** no seletor de horários não é possível clicar em um horário que já tem um agendamento marcado
 
 **Evidência:** `a1dkt-w1ldp.gif`  
-**Resultado esperado:** O seletor di horários deve exibir como desabilitado ou indisponível o horário que já possui um agendamento confirmado.  
+**Resultado esperado:** O seletor de horários deve exibir como desabilitado ou indisponível o horário que já possui um agendamento confirmado.  
 **Resultado obtido:** O horário em conflito foi exibido de forma indisponível, impedindo o clique do usuário.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
-#### **CT-16: Validar confirmação de agendamento com sucesso**
+### **CT-16: Validar confirmação de agendamento com sucesso**
+
 * **Dado** que o usuário preencheu todos os campos obrigatórios corretamente e cumpriu todas as regras de validação
 * **Quando** ele clica no botão “Confirmar agendamento”
-* **Então** deve exibir uma mensagem di sucesso na tela informando que o agendamento foi realizado com êxito
+* **Então** deve exibir uma mensagem de sucesso na tela informando que o agendamento foi realizado com êxito
 * **E** deve exibir o agendamento na aba “Meus agendamentos”
 
 **Evidência:** `a6ubg-lf60w.gif`  
-**Resultado esperado:** O sistema deve persistir os dados informados, disparar uma notificação visual de sucesso e listar o novo registro na aba de controle.  
+**Resultado esperado:** O sistema deve persistir os dados informados, disparar uma notificação visual di sucesso e listar o novo registro na aba de controle.  
 **Resultado obtido:** A mensagem de sucesso foi exibida adequadamente na interface e o novo agendamento constou imediatamente no histórico.  
 **Status:** 🟢 Aprovado
 
+<br>
+<br>
 ---
+<br>
 
 ## 📊 Relatório de Execução dos Testes
 
@@ -260,11 +324,9 @@ Esta seção detalha as inconformidades retidas durante o ciclo de execução, m
 * **Severidade:** Média (Funcionalidade com comportamento incorreto, mas não impede o fluxo completo)
 * **Componente:** Formulário de Novo Agendamento -> Campo Nome
 
-**📝 Descrição:**
-O campo "Nome" permite a inserção e permanência de números, caracteres especiais (como #$%) e aceita que o primeiro caractere seja um espaço em branco, violando o critério de aceitação que prevê apenas letras e espaços internos.
+**📝 Descrição:** O campo "Nome" permite a inserção e permanência de números, caracteres especiais (como #$%) e aceita que o primeiro caractere seja um espaço em branco, violando o critério de aceitação que prevê apenas letras e espaços internos.
 
-**👣 Passos para Reproduzir:**
-1. Acesse a plataforma AgendaLabQA e faça login.
+**👣 Passos para Reproduzir:** 1. Acesse a plataforma AgendaLabQA e faça login.
 2. Navegue até a aba Novo Agendamento.
 3. No campo Nome, digite: ` Talison 123 #$%`.
 4. Preencha os demais campos obrigatórios com dados válidos.
@@ -274,18 +336,18 @@ O campo "Nome" permite a inserção e permanência de números, caracteres espec
 **Resultado Esperado:** O sistema deve bloquear a digitação de caracteres numéricos/especiais e impedir o espaço inicial, ou exibir uma validação de campo inválido.  
 **Resultado Obtido:** O campo aceita todos os caracteres digitados e permite o avanço do formulário.
 
+<br>
 ---
+<br>
 
 ### 🐜 BUG-02: Campo "Telefone" permite digitação de letras e ignora a máscara de entrada
 * **ID do Caso de Teste:** CT-04
 * **Severidade:** Média
 * **Componente:** Formulário de Novo Agendamento -> Campo Telefone
 
-**📝 Descrição:**
-Ao interagir com o campo "Telefone", o sistema aceita a digitação de caracteres alfabéticos (letras), espaços livres e caracteres especiais que não pertencem à formatação padrão da máscara telefônica.
+**📝 Descrição:** Ao interagir com o campo "Telefone", o sistema aceita a digitação de caracteres alfabéticos (letras), espaços livres e caracteres especiais que não pertencem à formatação padrão da máscara telefônica.
 
-**👣 Passos para Reproduzir:**
-1. Acesse a aba Novo Agendamento.
+**👣 Passos para Reproduzir:** 1. Acesse a aba Novo Agendamento.
 2. Clique no campo Telefone.
 3. Tente digitar texto alfabético (Ex: `TelefoneTeste`).
 4. Insira caracteres fora da máscara (Ex: `*&*&`).
@@ -295,18 +357,18 @@ Ao interagir com o campo "Telefone", o sistema aceita a digitação de caractere
 **Resultado Obtido:** O campo aceita letras, espaços e símbolos fora do padrão estipulado.  
 **Observação:** Recomenda-se ajustar o campo para aplicar a máscara de formatação automaticamente conforme os números são digitados. Isso elimina a necessidade de o usuário inserir caracteres especiais manualmente e evita o estouro do limite máximo de dígitos (comportamento atual).
 
+<br>
 ---
+<br>
 
 ### 🐜 BUG-03: Campo "Data" quebra comportamento da máscara e aceita ano com 6 dígitos
 * **ID do Caso de Teste:** CT-08
 * **Severidade:** Alta (Pode gerar inconsistências graves na persistência do banco de dados e filtros de busca)
 * **Componente:** Formulário de Novo Agendamento -> Campo Data
 
-**📝 Descrição:**
-A máscara do campo data (DD/MM/AAAA) falha na limitação de caracteres do campo correspondente ao ano, permitindo que o usuário insira até 6 dígitos (Ex: 24/06/202622).
+**📝 Descrição:** A máscara do campo data (DD/MM/AAAA) falha na limitação de caracteres do campo correspondente ao ano, permitindo que o usuário insira até 6 dígitos (Ex: 24/06/202622).
 
-**👣 Passos para Reproduzir:**
-1. Acesse a aba Novo Agendamento.
+**👣 Passos para Reproduzir:** 1. Acesse a aba Novo Agendamento.
 2. Clique no campo Data.
 3. Digite uma data preenchendo o ano de forma estendida (Ex: `2406202622`).
 
